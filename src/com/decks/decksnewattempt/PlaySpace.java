@@ -3,7 +3,7 @@ import java.util.*;
 
 // Cards in play on the board
 public class PlaySpace {
-	Map<String, Pile> played;
+	private Map<String, Pile> played;
 	
 	// new empty PlaySpace
 	public PlaySpace(Set<String> players) {
@@ -20,7 +20,7 @@ public class PlaySpace {
 	
 	// Removes the pile played by a user from the PlaySpace and returns it
 	public Pile getPlayed(String player) {
-		return played.remove(player);
+		return played.get(player).removeAll();
 	}
 	
 	// Removes all of the piles played by all users from the PlaySpace and returns it as a single
@@ -28,7 +28,7 @@ public class PlaySpace {
 	public Pile getAll() {
 		Pile temp = new Pile(false, 0, 0, null);
 		for(String player: played.keySet()) {
-			temp.takeAll(getPlayed(player));
+			temp.addAll(getPlayed(player));
 		}
 		return temp;
 	}
