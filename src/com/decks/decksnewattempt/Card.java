@@ -2,12 +2,13 @@
 import java.awt.*;
 import java.net.URL;
 public class Card implements Comparable<Card> {
-	private int value;   // Value from 0 - 14 of the card, ace is either 0 or 14
-	private String suit; // Suit of the card in normal suits
-	private int centerX; // Center x coordinate
-	private int centerY; // Center y coordinate
-	private String name; // Full string name of the card
-	private Image image; // image used to draw the card
+	private int value;   	   // Value from 0 - 14 of the card, ace is either 0 or 14
+	private String suit; 	   // Suit of the card in normal suits
+	private int centerX; 	   // Center x coordinate
+	private int centerY; 	   // Center y coordinate
+	private String name; 	   // Full string name of the card
+	private Image image; 	   // image used to draw the card
+	private boolean isSelected // True if it is, else false
 	
 	// builds card, assigning value and suit
 	// takes a value 1-52 to correspond to a card in a deck, and converts that to a 
@@ -17,6 +18,8 @@ public class Card implements Comparable<Card> {
 		// assigns coordinates
 		this.centerX = x;
 		this.centerY = y;
+		
+		isSelected = false;
 		
 		// assigns value
 		if(value % 13 == 1) { // ace case
@@ -69,6 +72,15 @@ public class Card implements Comparable<Card> {
 	// return value of card
 	public int getValue() {
 		return value;
+	}
+	
+	// Triggers card to be selected
+	public void select() {
+		isSelected = true;
+	}
+	
+	public boolean isSelected() {
+		return isSelected;
 	}
 	
 	// compares two cards based on first their suit alphabetically, and then breaks ties with 
