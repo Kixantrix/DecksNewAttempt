@@ -33,6 +33,11 @@ public class Pile {
 			return pile.remove(0);
 		}
 		
+		// returns the card at index n in the pile and deletes it from pile
+		public Card remove(int n) {
+			return pile.remove(n);
+		}
+		
 		// returns this pile and removes the contents of it. 
 		public Pile removeAll() {
 			Pile temp = this;
@@ -109,6 +114,19 @@ public class Pile {
 		public void update(int dX, int dY) {
 			centerX += dX;
 			centerY += dY;
+		}
+		
+		public String toString() {
+			return pile.toString();
+		}
+		
+		// Deals n cards to each player in the provided map
+		public void deal(int n, Map<String, Pile> temp) {
+			for(int i = 0; i < n; i++) {
+				for(String player: temp.keySet()) {
+					temp.get(player).add(remove())
+				}
+			}
 		}
 		
 }
