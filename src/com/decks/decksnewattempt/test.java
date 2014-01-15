@@ -1,7 +1,8 @@
+package com.decks.decksnewattempt;
 import java.util.*;
 
 public class test {
-	public static void main(String[args]) {
+	public static void main() {
 		Set<String> players = new TreeSet<String>();
 		players.add("Steve");
 		players.add("Jim");
@@ -12,7 +13,7 @@ public class test {
 		for(String player: players) {
 			Set temp = new TreeSet<String>();
 			temp.add(player);
-			hands.add(player, new Pile(false, 0, 0, temp));
+			hands.put(player, new Pile(false, 0, 0, temp));
 		}
 		System.out.println(deck);
 		System.out.println(players);

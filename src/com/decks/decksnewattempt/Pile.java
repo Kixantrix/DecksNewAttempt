@@ -1,9 +1,8 @@
-
+package com.decks.decksnewattempt;
 import java.util.*;
 import java.awt.*;
 import java.io.*;
 
-import javax.smartcardio.Card;
 
 public class Pile {
 	
@@ -47,10 +46,10 @@ public class Pile {
 		
 		// removes all selected cards from pile and returns pile of removed cards
 		public Pile removeSelected() {
-			Pile temp = new Pile(false, null, null, null);
+			Pile temp = new Pile(false, 0, 0, allowedViewers);
 			for(int i = pile.size(); i >= 0; i--) {
 				if(pile.get(i).isSelected()) {
-					temp.add(pile.remove(index));
+					temp.add(pile.remove(i));
 				}
 			}
 			return temp;
@@ -124,7 +123,7 @@ public class Pile {
 		public void deal(int n, Map<String, Pile> temp) {
 			for(int i = 0; i < n; i++) {
 				for(String player: temp.keySet()) {
-					temp.get(player).add(remove())
+					temp.get(player).add(remove());
 				}
 			}
 		}

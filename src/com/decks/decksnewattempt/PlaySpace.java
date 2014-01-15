@@ -1,11 +1,13 @@
+package com.decks.decksnewattempt;
 import java.awt.*;
 import java.util.*;
 
 // Cards in play on the board
 public class PlaySpace {
-	private Map<String, Pile> played;
+	private Map<String, Pile> played; // Map of the cards each player has played
 	
 	// new empty PlaySpace
+	// has piles for each player mapped to the player's name
 	public PlaySpace(Set<String> players) {
 		played = new TreeMap<String, Pile>();
 		for(String player: players) {
@@ -15,7 +17,7 @@ public class PlaySpace {
 	
 	// Adds a pile from a user to the PlaySpace tagged by their name 
 	public void play(String player, Pile toAdd) {
-		played.get(player).addAll(toAdd));
+		played.get(player).addAll(toAdd);
 	}
 	
 	// Removes the pile played by a user from the PlaySpace and returns it

@@ -1,6 +1,9 @@
 // Defines a card that could be used in a game of cards and makes up the contents of a pile
+package com.decks.decksnewattempt;
 import java.awt.*;
 import java.net.URL;
+
+import android.media.Image;
 public class Card implements Comparable<Card> {
 	private int value;   	   // Value from 0 - 14 of the card, ace is either 0 or 14
 	private String suit; 	   // Suit of the card in normal suits
@@ -8,7 +11,7 @@ public class Card implements Comparable<Card> {
 	private int centerY; 	   // Center y coordinate
 	private String name; 	   // Full string name of the card
 	private Image image; 	   // image used to draw the card
-	private boolean isSelected // True if it is, else false
+	private boolean isSelected; // True if it is, else false
 	
 	// builds card, assigning value and suit
 	// takes a value 1-52 to correspond to a card in a deck, and converts that to a 
