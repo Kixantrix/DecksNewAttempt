@@ -1,7 +1,7 @@
 package com.decks.decksnewattempt;
 import java.util.*;
 
-public class test {
+public class Test {
 	public static void main() {
 		Set<String> players = new TreeSet<String>();
 		players.add("Steve");
