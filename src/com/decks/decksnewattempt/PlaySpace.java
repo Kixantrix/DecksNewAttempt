@@ -21,16 +21,16 @@ public class PlaySpace {
 	}
 	
 	// Removes the pile played by a user from the PlaySpace and returns it
-	public Pile getPlayed(String player) {
+	public Pile remove(String player) {
 		return played.get(player).removeAll();
 	}
 	
 	// Removes all of the piles played by all users from the PlaySpace and returns it as a single
 	// Pile 
-	public Pile getAll() {
+	public Pile removeAll() {
 		Pile temp = new Pile(false, 0, 0, null);
 		for(String player: played.keySet()) {
-			temp.addAll(getPlayed(player));
+			temp.addAll(remove(player));
 		}
 		return temp;
 	}
