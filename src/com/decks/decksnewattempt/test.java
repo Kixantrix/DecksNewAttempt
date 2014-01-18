@@ -2,7 +2,7 @@ package com.decks.decksnewattempt;
 import java.util.*;
 
 public class Test {
-	public static void main() {
+	public static void main(String [ ] args) {
 		Set<String> players = new TreeSet<String>();
 		players.add("Steve");
 		players.add("Jim");
