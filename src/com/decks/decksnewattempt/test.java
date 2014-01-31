@@ -1,7 +1,7 @@
 package com.decks.decksnewattempt;
 import java.util.*;
 
-public class Test {
+public class test {
 	public static void main(String [ ] args) {
 		Set<String> players = new TreeSet<String>();
 		players.add("Steve");
@@ -9,9 +9,9 @@ public class Test {
 		players.add("Bob");
 		Deck deck = new Deck(false, 0, 0, players);
 		System.out.println(deck);
-		Map hands = new TreeMap<String, Pile>();
+		Map<String,Pile> hands = new TreeMap<String, Pile>();
 		for(String player: players) {
-			Set temp = new TreeSet<String>();
+			Set<String> temp = new TreeSet<String>();
 			temp.add(player);
 			hands.put(player, new Pile(false, 0, 0, temp));
 		}
